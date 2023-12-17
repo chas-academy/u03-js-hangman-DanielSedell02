@@ -1,11 +1,4 @@
-.card container m-5 p-5{
-  border:2px solid #007bff;
-  background: #007bff;
-  padding: 5px;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
+
 
 body{
   display: flex;
@@ -24,10 +17,31 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom:55px;
 }
-.button-container{
+.select-letter{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
+
+}
+
+@media screen and (max-width: 430px) {
+  .text-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:55px;
+  }
+  .select-letter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    display: block;
+  }
+
+ 
+  
 }

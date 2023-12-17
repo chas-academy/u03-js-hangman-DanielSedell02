@@ -1,4 +1,4 @@
-const WORDS = ['banana', 'apple', 'watermelon', 'honeydew', 'orange', 'pineapple']
+const WORDS =['garage', 'berry', 'order', 'suffering', 'exact', 'doubt', 'offend','drive', 'useful', 'mass', 'loot', 'killer',]
 let answer;
 let wordState;
 let num;
@@ -21,7 +21,7 @@ const selectedButton = (e) => {
     // loop through each letter in answer
     for (let i = 0; i < answer.length; i++){
         // if the selected letter is correct
-        if ( guessLetter === answer[i] ){
+        if ( guessLetter === answer[i] ) {
             let correctEle = $('#word-container .btn-warning')[i] // get the correct letter button element with index
             $(correctEle).text(guessLetter) 
         }
