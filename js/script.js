@@ -3,6 +3,7 @@ let answer;
 let wordState;
 let num;
 
+
 const createButton = () => {
   const start = 'a';
   const end = 'z';
@@ -14,6 +15,7 @@ const createButton = () => {
     $('#button-container').append(btn);
   }
 };
+
 
 const selectedButton = (e) => {
   const guessLetter = $(e.target).text(); // get the text of button selected
@@ -75,7 +77,7 @@ const startGame = () => {
   // state of variables
   answer = WORDS[Math.floor(Math.random() * WORDS.length)];
   wordState = [];
-  num = 5;
+  num = 6;
   $('#guesses').text(num);
   $('#button-container').html('');
   $('#word-container').html('');
@@ -84,3 +86,7 @@ const startGame = () => {
 };
 
 startGame();
+
+
+
+
