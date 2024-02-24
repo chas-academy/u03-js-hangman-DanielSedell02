@@ -18,23 +18,22 @@ const createButton = () => {
 
 const selectedButton = (e) => {
     const guessLetter = $(e.target).text(); // get the text of button selected
+    let correctGuess = false; // Flag to track if the guess is correct
     // loop through each letter in answer
-    let correctGuess = false;
     for (let i = 0; i < answer.length; i++) {
         // if the selected letter is correct
         if (guessLetter === answer[i]) {
             const correctEle = $('#word-container .btn-warning')[i]; // get the correct letter button element with index
             $(correctEle).text(guessLetter);
-            correctGuess = true;
+            correctGuess = true; // Set the flag to true
         }
     }
+    // If the guess is incorrect, increment the incorrectGuesses counter
     if (!correctGuess) {
         incorrectGuesses++;
         $('#hangman-image').attr('src', `images/h${incorrectGuesses}.png`);
     }
-    num--;
-    $('#guesses').text(num); // update number of guess in html
-
+    // Check if the game is won or lost
     if (checkWin()) {
         setTimeout(() => {
             alert('Awesome! You\'re correct!');
@@ -45,6 +44,11 @@ const selectedButton = (e) => {
             alert('Game over!');
             endGame();
         }, 100);
+    }
+    // Update the number of guesses left only if the guess is incorrect
+    if (!correctGuess) {
+        num--;
+        $('#guesses').text(num); // update number of guess in html
     }
 };
 
@@ -94,4 +98,3 @@ const startGame = () => {
 };
 
 startGame();
-
